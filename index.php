@@ -43,7 +43,7 @@ $movie_2->country_production = "USA";
 $movie_2->setOscar(5);
 
 
-$movie_3 = new Movie("Il Signore degli Anelli", ["Avventura", "Fantastico"], "2003");
+$movie_3 = new Movie("Il Signore degli Anelli", "Fantastico", "2003");
 
 $movie_3->director            = "Peter Jackson";
 $movie_3->duration            = "127 minuti";
@@ -51,14 +51,31 @@ $movie_3->country_production = "USA";
 $movie_3->setOscar(5);
 
 
-$movie_4 = new Movie("Il Gladiatore", ["Storico", "Guerra"], "2000");
+$movie_4 = new Movie("Il Gladiatore", "Storico", "2000");
 
 $movie_4->director            = "Ridley Scott";
 $movie_4->duration            = "170 minuti";
 $movie_4->country_production = "USA";
 $movie_4->setOscar(5);
 
-echo $movie_1->title." ".$movie_1->genre." ".$movie_1->year." ".$movie_1->director." ".$movie_1->duration." ".$movie_1->country_production." ".$movie_1->oscar;
+// CREO ARRAY DI FILM
+
+$movies = [
+    $movie_1,
+    $movie_2,
+    $movie_3,
+    $movie_4,
+];
+
+// CICLO ARRAY DI FILM PER MOSTRARLI A VIDEO
+
+foreach($movies as $movie){
+    echo "<div>".$movie->title."<br>".$movie->genre."<br>".$movie->year."<br>".$movie->director."<br>".$movie->duration."<br>".$movie->country_production."<br>".$movie->oscar."</div>"."<br>";
+}
+
+
+
+
 ?>
 
 
