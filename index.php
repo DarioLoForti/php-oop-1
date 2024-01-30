@@ -67,14 +67,6 @@ $movies = [
     $movie_4,
 ];
 
-// CICLO ARRAY DI FILM PER MOSTRARLI A VIDEO
-
-foreach($movies as $movie){
-    echo "<div>".$movie->title."<br>".implode(", ", $movie->genre)."<br>".$movie->year."<br>".$movie->director."<br>".$movie->duration."<br>".$movie->country_production."<br>".$movie->oscar."</div>"."<br>";
-}
-
-
-
 
 ?>
 
@@ -84,10 +76,35 @@ foreach($movies as $movie){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
 </head>
 <body>
 
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center mt-5">
+            <h1>Movie List</h1>
+        </div>
+        <?php foreach ($movies as $movie) { ?>
+            <div class="col-6 my-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Titolo: <?php echo $movie->title; ?></h2>
+                        <h5>Genere: <?php echo implode(", ", $movie->genre); ?></h5> 
+                        <h5>Anno di uscita: <?php echo $movie->year; ?></h5>
+                        <h5>Regista: <?php echo $movie->director; ?></h5>
+                        <h5>Durata: <?php echo $movie->duration; ?></h5> 
+                        <h5>Paese di produzione: <?php echo $movie->country_production ?></h5> 
+                        <h5>Oscar: <?php echo $movie->oscar; ?></h5>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+</div>
     
 </body>
 </html>
