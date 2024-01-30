@@ -34,6 +34,30 @@ $movie_1->duration            = "168 minuti";
 $movie_1->country_production = "USA";
 $movie_1->setOscar(5);
 
+
+$movie_2 = new Movie("The Wolf of Wall Street", "drammatico", "2014");
+
+$movie_2->director            = "Martin Scorsese";
+$movie_2->duration            = "180 minuti";
+$movie_2->country_production = "USA";
+$movie_2->setOscar(5);
+
+
+$movie_3 = new Movie("Il Signore degli Anelli", ["Avventura", "Fantastico"], "2003");
+
+$movie_3->director            = "Peter Jackson";
+$movie_3->duration            = "127 minuti";
+$movie_3->country_production = "USA";
+$movie_3->setOscar(5);
+
+
+$movie_4 = new Movie("Il Gladiatore", ["Storico", "Guerra"], "2000");
+
+$movie_4->director            = "Ridley Scott";
+$movie_4->duration            = "170 minuti";
+$movie_4->country_production = "USA";
+$movie_4->setOscar(5);
+
 echo $movie_1->title." ".$movie_1->genre." ".$movie_1->year." ".$movie_1->director." ".$movie_1->duration." ".$movie_1->country_production." ".$movie_1->oscar;
 ?>
 
